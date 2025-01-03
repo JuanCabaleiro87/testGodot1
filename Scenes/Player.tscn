@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://eoiyd18xjdlg"]
+
+[ext_resource type="Material" uid="uid://bugf3wl0mtfwj" path="res://Materials/Cube.tres" id="1_6knen"]
+[ext_resource type="Script" path="res://Scripts/playerMovement.gd" id="1_8xbue"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yu4f3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o13db"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_12n84"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_8xbue")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_6knen")
+mesh = SubResource("CapsuleMesh_yu4f3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_o13db")
+
+[node name="Head" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.538579, 0, 0, 0, 0.320276, 0, 0, 0, 0.519544, 0.319334, 0.546, 0)
+mesh = SubResource("BoxMesh_12n84")
